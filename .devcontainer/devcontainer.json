@@ -1,1 +1,15 @@
-
+{
+    "name": "C++ Dev Environment",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "runArgs": ["--rm"],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-vscode.cpptools" 
+    ],
+    "postCreateCommand": "cd build && ctest --output-on-failure || true"
+}
